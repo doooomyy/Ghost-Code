@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ghost Code | Gaming Gear & Tech</title>
+    <style>
+        :root {
+            --neon-blue: #00f3ff;
+            --dark-blue: #006680;
+            --black: #0a0a0c;
+            --card-bg: #121216;
+            --text-light: #e0f7fc;
+            --text-dim: #88a0a8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--black);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: rgba(10, 10, 12, 0.95);
+            border-bottom: 2px solid var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            text-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        .logo span {
+            color: var(--neon-blue);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-weight: 600;
+            transition: color 0.3s, text-shadow 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--neon-blue);
+            text-shadow: 0 0 8px var(--neon-blue);
+        }
+
+        /* Hero Banner */
+        .hero {
+            text-align: center;
+            padding: 4rem 1rem;
+            background: radial-gradient(circle at center, #002b36 0%, var(--black) 70%);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--neon-blue);
+            text-shadow: 0 0 15px var(--neon-blue);
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            color: var(--text-dim);
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Product Grid */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 4px solid var(--neon-blue);
+            padding-left: 10px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .product-card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+        }
+
+        .product-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: var(--neon-blue);
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+
+        .product-description {
+            font-size: 0.9rem;
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .product-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .price {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--text-light);
+        }
+
+        .btn {
+            background-color: transparent;
+            color: var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+        }
+
+        .btn:hover {
+            background-color: var(--neon-blue);
+            color: var(--black);
+            box-shadow: 0 0 10px var(--neon-blue);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(0, 243, 255, 0.2);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        footer span {
+            color: var(--neon-blue);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Ghost <span>Code</span></div>
+        <nav>
+            <a href="#">Hardware</a>
+            <a href="#">Peripherals</a>
+            <a href="#">Accessories</a>
+            <a href="#">Cart (0)</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Level Up Your Setup</h1>
+        <p>High-performance gear engineered for stealth, speed, and precision.</p>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Featured Gear</h2>
+        <div class="product-grid">
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Keyboards</div>
+                    <h3 class="product-title">Phantom RGB Mechanical Keyboard</h3>
+                    <p class="product-description">Ultra-responsive linear switches with customizable per-key neon lighting and an aluminum frame.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$129.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Mice</div>
+                    <h3 class="product-title">Spectre Wireless Gaming Mouse</h3>
+                    <p class="product-description">Ultralight 55g ergonomic design featuring a 26k DPI optical sensor and zero-latency wireless tech.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$79.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Audio</div>
+                    <h3 class="product-title">Vortex 7.1 Surround Headset</h3>
+                    <p class="product-description">Immersive spatial audio with 50mm neodymium drivers and a noise-canceling detachable mic.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$99.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Monitors</div>
+                    <h3 class="product-title">Apex 27" 240Hz Curved Monitor</h3>
+                    <p class="product-description">1440p QHD display with 1ms response time, HDR400 support, and adaptive-sync technology.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$349.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Accessories</div>
+                    <h3 class="product-title">CyberMat XL RGB Mousepad</h3>
+                    <p class="product-description">Micro-woven cloth surface optimized for speed and control, featuring edge-lit neon blue lighting.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$29.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Streaming</div>
+                    <h3 class="product-title">Shadowcast USB Condenser Mic</h3>
+                    <p class="product-description">Studio-quality 192kHz/24-bit audio capture with a built-in shock mount and quick-tap mute sensor.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$119.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Furniture</div>
+                    <h3 class="product-title">Aegis Ergonomic Gaming Chair</h3>
+                    <p class="product-description">High-density foam padding, adjustable lumbar support, 4D armrests, and breathable mesh fabric.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$249.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div>
+                    <div class="product-category">Controllers</div>
+                    <h3 class="product-title">Pulse Wireless Pro Controller</h3>
+                    <p class="product-description">Hall-effect anti-drift thumbsticks, remappable rear paddles, and customizable trigger locks.</p>
+                </div>
+                <div class="product-bottom">
+                    <span class="price">$89.99</span>
+                    <button class="btn">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 <span>Ghost Code</span>. All rights reserved. Designed for Gamers.</p>
+    </footer>
+
+</body>
+</html>
